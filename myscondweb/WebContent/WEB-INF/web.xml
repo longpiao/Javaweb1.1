@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>myscondweb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!--声明一servlet 
+  tomcat在部署当前应用时，会读取web.xml中所有的信息。
+  当看到servlet声明时，自动根据全类名使用反射，创建一个servlet对象 -->
+  <servlet>
+    <description></description>
+    <display-name>MyServiceOne</display-name>
+    <!-- servlet的别名 -->
+    <servlet-name>MyServiceOne</servlet-name>
+  <!-- 这个是servlet的全类名 -->
+    <servlet-class>com.md.services.MyServiceOne</servlet-class>
+  </servlet>
+  <!-- 指定每个servlet可以处理那些请求 -->
+  <servlet-mapping>
+    <servlet-name>MyServiceOne</servlet-name>
+    <!-- web.xml由tomcat解析，/解析到项目名 -->
+    <url-pattern>/yes</url-pattern>
+  </servlet-mapping>
+</web-app>
